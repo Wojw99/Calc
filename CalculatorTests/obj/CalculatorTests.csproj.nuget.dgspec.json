@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Development\\Projekty\\POIG\\Calculator\\CalculatorTests\\CalculatorTests.csproj": {}
+    "D:\\Development\\GitHub\\Calc\\CalculatorTests\\CalculatorTests.csproj": {}
   },
   "projects": {
-    "D:\\Development\\Projekty\\POIG\\Calculator\\CalculatorTests\\CalculatorTests.csproj": {
+    "D:\\Development\\GitHub\\Calc\\CalculatorTests\\CalculatorTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Development\\Projekty\\POIG\\Calculator\\CalculatorTests\\CalculatorTests.csproj",
+        "projectUniqueName": "D:\\Development\\GitHub\\Calc\\CalculatorTests\\CalculatorTests.csproj",
         "projectName": "CalculatorTests",
-        "projectPath": "D:\\Development\\Projekty\\POIG\\Calculator\\CalculatorTests\\CalculatorTests.csproj",
+        "projectPath": "D:\\Development\\GitHub\\Calc\\CalculatorTests\\CalculatorTests.csproj",
         "packagesPath": "C:\\Users\\woj19\\.nuget\\packages\\",
-        "outputPath": "D:\\Development\\Projekty\\POIG\\Calculator\\CalculatorTests\\obj\\",
+        "outputPath": "D:\\Development\\GitHub\\Calc\\CalculatorTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\Development\\Projekty\\POIG\\Calculator\\Calculator\\Calculator.csproj": {
-                "projectPath": "D:\\Development\\Projekty\\POIG\\Calculator\\Calculator\\Calculator.csproj"
+              "D:\\Development\\GitHub\\Calc\\Calculator\\Calculator.csproj": {
+                "projectPath": "D:\\Development\\GitHub\\Calc\\Calculator\\Calculator.csproj"
               }
             }
           }
@@ -81,12 +81,12 @@
         }
       }
     },
-    "D:\\Development\\Projekty\\POIG\\Calculator\\Calculator\\Calculator.csproj": {
+    "D:\\Development\\GitHub\\Calc\\Calculator\\Calculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Development\\Projekty\\POIG\\Calculator\\Calculator\\Calculator.csproj",
+        "projectUniqueName": "D:\\Development\\GitHub\\Calc\\Calculator\\Calculator.csproj",
         "projectName": "Calculator",
-        "projectPath": "D:\\Development\\Projekty\\POIG\\Calculator\\Calculator\\Calculator.csproj"
+        "projectPath": "D:\\Development\\GitHub\\Calc\\Calculator\\Calculator.csproj"
       },
       "frameworks": {
         "net472": {}

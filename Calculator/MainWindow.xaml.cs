@@ -24,6 +24,10 @@ namespace Calculator
         public MainWindow()
         {
             InitializeComponent();
+            //ONP onp = new ONP(new string[] { "(", "1", "+", "2", "*", "3", "-", "4", ")", "/", "(", "5", "+", "6", ")", "=" });
+            //ONP onp = new ONP(new string[] { "3", "*", "4", "/", "2" , "="});
+            ONP onp = new ONP(new string[] { "8", "/", "4", "/", "2", "/", "2", "/", "2", "=" });
+            onp.Count();
         }
 
         private void Clear()
@@ -36,45 +40,23 @@ namespace Calculator
         private void ButtonNumber_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            textBlockStack.Text += button.Content.ToString();
-            cache += button.Content.ToString();
+
         }
 
         private void ButtonOperand_Click(object sender, RoutedEventArgs e)
         {
-            if(cache != "")
-            {
-                var button = sender as Button;
-                textBlockStack.Text += button.Content.ToString();
 
-                counter.Add(cache);
-                counter.Add(button.Content.ToString());
-
-                cache = "";
-            }
         }
 
         private void ButtonResult_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
 
-            if(cache == "" && textBlockResult.Text == "")
-            {
-                counter.Add("0");
-                textBlockStack.Text += "0";
-            }
-            else
-            {
-                counter.Add(cache);
-                cache = "";
-            }
-
-            textBlockResult.Text = $"{counter.Count()}";
         }
 
         private void ButtonC_Click(object sender, RoutedEventArgs e)
         {
-            Clear();    
+
         }
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)

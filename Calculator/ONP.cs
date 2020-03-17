@@ -13,7 +13,7 @@ namespace Calculator
         private List<string> list = new List<string>();
         private int[] operandsPriority = { 1, 1, 2, 3 };
         private string[] operands = { "+", "-", "*", "/" };
-        private string[] brackeys = { "(", ")" , "="};
+        private string[] brackeys = { "(", ")", "=" };
 
         #region Constructors
         public ONP()
@@ -21,6 +21,7 @@ namespace Calculator
 
         }
 
+        // Constructor only for tests
         public ONP(string[] expression)
         {
             foreach (var s in expression)
@@ -34,10 +35,71 @@ namespace Calculator
                     throw new ArgumentException("Array elements must be digits or math operators!");
                 }
             }
-        } 
+        }
         #endregion
 
-        public void Add(string element) => list.Add(element);
+        public void Clear() => list.Clear();
+
+        public void Add(string element)
+        {
+            if (IsCorrect(element))
+            {
+                list.Add(element);
+            }
+            else
+            {
+                throw new ArgumentException("Element is not valid in this place.");
+            }
+        }
+
+        private bool IsCorrect(string element)
+        {
+            int len = list.Count;
+
+            if (len > 0 && list.Last() == "=") return false;
+
+            if (operands.Contains(element))
+            {
+                if (len == 0) return false;
+                if (operands.Contains(list[len - 1])) return false;
+            }
+
+            //if (element == ")" && NumberOf(")") != NumberOf("(") - 1) return false;
+
+            return true;
+        }
+
+        private int NumberOf(string element)
+        {
+            int num = 0;
+            for (int i = 0; i < list.Count; i++)
+            {
+                if(list[i] == element)
+                    num++;
+            }
+            return num;
+        }
+
+        public string GetFirst()
+        {
+            if (list.Count > 0)
+                return list[0];
+            return null;
+        }
+
+        public string GetLast()
+        {
+            if (list.Count > 0)
+                return list[list.Count - 1];
+            return null;
+        }
+
+        public bool LastIsDigit()
+        {
+            if (list.Count > 0 && Regex.IsMatch(list.Last(), @"\d"))
+                return true;
+            return false;
+        }
 
         private int PriorityOf(string operand)
         {

@@ -11,13 +11,14 @@
     <Border BorderThickness="3">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.5*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition Height="1.2*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="0.2*"/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -27,13 +28,17 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Result -->
+            <!-- Stack -->
             <TextBlock x:Name="textBlockStack" Grid.Row="0" 
                    Text="" Grid.ColumnSpan="4"
                    TextAlignment="Center"/>
+            
+            <!-- Result -->
             <TextBlock x:Name="textBlockResult" Grid.Row="1" 
                    Text="" Grid.ColumnSpan="4"
                    TextAlignment="Center" FontSize="38"/>
+            
+            <!-- Buttons -->
             <Button Grid.Row="3" Grid.Column="0" Content="7" Click="ButtonNumber_Click" Style="{StaticResource ButtonNumber}"/>
             <Button Grid.Row="3" Grid.Column="1" Content="8" Click="ButtonNumber_Click" Style="{StaticResource ButtonNumber}"/>
             <Button Grid.Row="3" Grid.Column="2" Content="9" Click="ButtonNumber_Click" Style="{StaticResource ButtonNumber}"/>
@@ -43,15 +48,23 @@
             <Button Grid.Row="5" Grid.Column="0" Content="1" Click="ButtonNumber_Click" Style="{StaticResource ButtonNumber}"/>
             <Button Grid.Row="5" Grid.Column="1" Content="2" Click="ButtonNumber_Click" Style="{StaticResource ButtonNumber}"/>
             <Button Grid.Row="5" Grid.Column="2" Content="3" Click="ButtonNumber_Click" Style="{StaticResource ButtonNumber}"/>
+            
+            <Button Grid.Row="6" Grid.Column="0" Content="+/-" Click="ButtonPlusMinus_Click" Style="{StaticResource ButtonNumber}"/>
+            <Button Grid.Row="6" Grid.Column="1" Content="0" Click="ButtonNumber_Click" Style="{StaticResource ButtonNumber}"/>
+            <Button Grid.Row="6" Grid.Column="2" Content="," Click="ButtonNumber_Click" Style="{StaticResource ButtonNumber}"/>
 
             <Button Grid.Row="2" Grid.Column="3" Content="/" Click="ButtonOperand_Click" Style="{StaticResource ButtonOperation}"/>
             <Button Grid.Row="3" Grid.Column="3" Content="*" Click="ButtonOperand_Click" Style="{StaticResource ButtonOperation}"/>
             <Button Grid.Row="4" Grid.Column="3" Content="-" Click="ButtonOperand_Click" Style="{StaticResource ButtonOperation}"/>
             <Button Grid.Row="5" Grid.Column="3" Content="+" Click="ButtonOperand_Click" Style="{StaticResource ButtonOperation}"/>
             <Button Grid.Row="6" Grid.Column="3" Content="=" Click="ButtonResult_Click" Style="{StaticResource ButtonEqual}"/>
+            
+            <Button Grid.Row="2" Grid.Column="1" Content="CE" Click="ButtonCE_Click" Style="{StaticResource ButtonOperation}"/>
             <Button Grid.Row="2" Grid.Column="2" Content="C" Click="ButtonC_Click" Style="{StaticResource ButtonOperation}"/>
-            <Button Grid.Row="2" Grid.Column="0" Content="&lt;=" Click="ButtonBack_Click" Style="{StaticResource ButtonOperation}"/>
+            <Button Grid.Row="2" Grid.Column="0" Content="()" Click="ButtonBracket_Click" Style="{StaticResource ButtonOperation}"/>
 
+            <!-- Messages -->
+            <TextBlock x:Name="textBlockMessage" Grid.Row="7" Grid.ColumnSpan="4" FontSize="14" TextAlignment="Center"/>
         </Grid>
     </Border>
 </Window>

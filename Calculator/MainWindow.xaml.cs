@@ -68,7 +68,7 @@ namespace Calculator
 
             ClearIfEnd();
 
-            if(button.Content.ToString() != "," || cache != "" && !cache.Contains(','))
+            if(button.Content.ToString() != defaultSeparator || cache != "" && !cache.Contains(defaultSeparator))
             {
                 cache += button.Content.ToString();
                 textBlockResult.Text = cache;

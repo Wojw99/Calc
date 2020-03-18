@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -24,10 +25,19 @@ namespace Calculator
         private string cache = "";
         private bool end = false;
         private bool bracketOpen = false;
+        private string defaultSeparator;
 
         public MainWindow()
         {
             InitializeComponent();
+            ChangeSeparator();
+        }
+
+        private void ChangeSeparator()
+        {
+            NumberFormatInfo nfi = NumberFormatInfo.CurrentInfo;
+            buttonSeparator.Content = nfi.NumberDecimalSeparator;
+            defaultSeparator = nfi.NumberDecimalSeparator;
         }
 
         private void ClearIfEnd()
@@ -93,7 +103,7 @@ namespace Calculator
         {
             try
             {
-                if (cache == "" && counter.GetLast() != ")")
+                if (cache == "")
                 {
                     counter.Add("0");
                     textBlockStack.Text += "0";

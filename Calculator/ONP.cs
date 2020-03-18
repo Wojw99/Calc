@@ -103,7 +103,6 @@ namespace Calculator
 
         private int PriorityOf(string operand)
         {
-
             for (int i = 0; i < operands.Length; i++)
             {
                 if(operand == operands[i])

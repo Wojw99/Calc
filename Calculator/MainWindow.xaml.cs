@@ -1,5 +1,4 @@
-﻿using Calculator.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +20,6 @@ namespace Calculator
 {
     public partial class MainWindow : Window
     {
-        private Timer timer = new Timer();
         private ONP counter = new ONP();
         private string cache = "";
         private bool end = false;
@@ -60,8 +58,11 @@ namespace Calculator
 
             ClearIfEnd();
 
-            cache += button.Content.ToString();
-            textBlockResult.Text = cache;
+            if(button.Content.ToString() != "," || cache != "" && !cache.Contains(','))
+            {
+                cache += button.Content.ToString();
+                textBlockResult.Text = cache;
+            }
         }
 
         private void ButtonOperand_Click(object sender, RoutedEventArgs e)
@@ -72,7 +73,7 @@ namespace Calculator
 
             try
             {
-                if(cache != "" || counter.GetLast() == ")")
+                if(cache != "")
                 {
                     counter.Add(cache);
                     counter.Add(button.Content.ToString());
@@ -120,10 +121,6 @@ namespace Calculator
                 double cacheDouble = Double.Parse(cache);
                 cache = (cacheDouble * (-1)).ToString();
             }
-            else
-            {
-                cache = "-";
-            }
 
             textBlockResult.Text = cache;
         }
@@ -133,27 +130,27 @@ namespace Calculator
             Clear();
         }
 
+        // Brackets don't work for now
         private void ButtonBracket_Click(object sender, RoutedEventArgs e)
         {
+            var button = sender as Button;
+            string content = button.Content.ToString();
+
             ClearIfEnd();
 
             try
             {
-                if (cache != "")
+                if(content == "(")
                 {
-                    counter.Add(cache);
-                    counter.Add(")");
-                    textBlockStack.Text += cache;
-                    textBlockStack.Text += ")";
-                    textBlockResult.Text = "";
-                    cache = "";
+                    counter.Add(content);
+                    textBlockStack.Text += content;
                 }
-                else
+                else if(content == ")" && cache != "")
                 {
                     counter.Add(cache);
-                    counter.Add("(");
+                    counter.Add(content);
                     textBlockStack.Text += cache;
-                    textBlockStack.Text += "(";
+                    textBlockStack.Text += content;
                     textBlockResult.Text = "";
                     cache = "";
                 }

@@ -1,0 +1,3 @@
+- nawiasy nie działają
+- zablokować możliwość dodania do pamięci pustego przecinka
+- zablokować możliwość dodania do pamięci samego minusa

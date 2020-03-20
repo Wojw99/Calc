@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
-        mc:Ignorable="d"
-        Title="Calculator" Height="600" Width="400"
+        mc:Ignorable="d" MinWidth="300" MinHeight="400"
+        Title="Calculator" Height="600" Width="400" WindowStartupLocation="CenterScreen"
         FontFamily="Consolas" FontSize="25" Foreground="Black">
     <Border BorderThickness="3">
         <Grid>
@@ -54,9 +54,7 @@
             <Button x:Name="buttonSeparator" Grid.Row="7" Grid.Column="2" Content="," Click="ButtonNumber_Click" Style="{StaticResource ButtonNumber}"/>
 
             <Button Grid.Row="2" Grid.Column="3" Content="/" Grid.RowSpan="2" Click="ButtonOperand_Click" Style="{StaticResource ButtonOperation}"/>
-            <!--
-            <Button Grid.Row="2" Grid.Column="0" Content="MOD" Grid.RowSpan="2" Click="ButtonOperand_Click" Style="{StaticResource ButtonOperation}"/>
-            -->
+            <Button Grid.Row="2" Grid.Column="0" Content="%" Grid.RowSpan="2" Click="ButtonOperand_Click" Style="{StaticResource ButtonOperation}"/>
             <Button Grid.Row="4" Grid.Column="3" Content="*" Click="ButtonOperand_Click" Style="{StaticResource ButtonOperation}"/>
             <Button Grid.Row="5" Grid.Column="3" Content="-" Click="ButtonOperand_Click" Style="{StaticResource ButtonOperation}"/>
             <Button Grid.Row="6" Grid.Column="3" Content="+" Click="ButtonOperand_Click" Style="{StaticResource ButtonOperation}"/>

@@ -21,7 +21,7 @@ namespace Calculator
 {
     public partial class MainWindow : Window
     {
-        private ONP counter = new ONP();
+        private Counter counter = new Counter();
         private string cache = "";
         private bool end = false;
         private bool bracketOpen = false;
